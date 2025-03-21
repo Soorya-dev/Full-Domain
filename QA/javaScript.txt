@@ -1,0 +1,35 @@
+Single-Threaded synchronous language
+
+
+JavaScript has two types of task queues
+
+𝐌𝐢𝐜𝐫𝐨 𝐭𝐚𝐬𝐤𝐬 ✅
+Micro tasks are tasks that have higher priority and are executed immediately after the current task finishes, but before the next task is picked up from the event queue.
+
+Eg: process.nextTick, Promises, queueMicrotask, MutationObserver
+
+𝐌𝐚𝐜𝐫𝐨 𝐭𝐚𝐬𝐤𝐬✅
+These are executed at a lower priority compared to micro-tasks. These tasks are picked up from the event queue only when no micro-tasks are pending.
+Macro tasks usually involve I/O operations, timers, and user interactions.
+
+Eg: setTimeout, setInterval, setImmediate, requestAnimationFrame, I/O, UI rendering.
+
+𝐄𝐯𝐞𝐧𝐭 𝐥𝐨𝐨𝐩✅
+The gatekeeper 😁 
+The event loop constantly checks the event queue for any pending events. If there are events present, it processes them one by one.
+
+The Event loop is one the most important aspect to understand in JavaScript. It is the mechanism that allows JavaScript to perform non-blocking operations. It is the reason why we can use asynchronous code in JavaScript. The Event loop is a loop that constantly checks if there are any tasks that need to be executed. If there are, it will execute them. If there are no tasks to execute, it will wait for new tasks to arrive.
+
+The Event loop has two main components: the Call stack and the Callback queue.
+
+Call Stack
+The Call stack is a data structure that stores the tasks that need to be executed. It is a LIFO (Last In, First Out) data structure, which means that the last task that was added to the Call stack will be the first one to be executed.
+
+Callback Queue
+The Callback queue is a data structure that stores the tasks that have been completed and are ready to be executed. It is a FIFO (First In, First Out) data structure, which means that the first task that was added to the Callback queue will be the first one to be executed.
+
+Event Loop's Workflow:
+Executes tasks from the Call Stack.
+For an asynchronous task, such as a timer, it runs in the background. JavaScript proceeds to the next task without waiting.
+When the asynchronous task concludes, its callback function is added to the Callback Queue.
+If the Call Stack is empty and there are tasks in the Callback Queue, the Event Loop transfers the first task from the Queue to the Call Stack for execution.

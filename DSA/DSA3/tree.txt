@@ -1,0 +1,27 @@
+A tree is a data structure that consists of a collection of elements connected by links. When visualized, it resembles an upside-down tree in nature. Unlike arrays or linked lists, which are linear data structures, a tree is hierarchical or nonlinear. Each element in a tree is called a node, which, similar to a linked list, contains two pieces of information: the data value it self and a pointer that references other nodes.
+
+The tree has a specific starting node called the root node. Nodes below the root are called its child nodes, making the root node their parent. Child nodes can also have their own child nodes, and so on. It is possible for a node to be both a child and a parent simultaneously. Two child nodes that are next to each other are referred to as siblings, and any node that does not have a child is called a leaf node.
+
+A binary tree is a type of tree where each node has a maximum of two immediate children. It is possible for nodes to have one child or no children, which would make them leaf nodes, but they can never have more than two. In a binary tree, these two child nodes are referred to as the left child and the right child.
+
+A binary search tree (BST) is a type of binary tree that remains naturally sorted because it follows this rule: every left child must always be less than its parent, and every right child must always be greater than its parent. A BST is considered balanced when its left and right subtrees have roughly the same number of nodes, although not necessarily an exact match. If the left and right sides of a BST have the exact same number of nodes, it would be a perfect tree, which is actually quite rare.
+
+In its worst-case scenario, a BST can become so unbalanced that it turns into a degenerate tree, which effectively functions like a linked list.
+
+
+why BST?
+Yes, a linked list is a type of tree. There are also self-balancing binary search trees, such as red-black trees and AVL trees. So why are binary search trees (BSTs) useful? When you want to retrieve an element from the tree, each time you move down one path of the tree—either to the left or the right—you are effectively discarding about half of the tree. This allows you to find elements very quickly.
+
+For example, if you wanted to find element number four, you would start at the root node and compare. Since four is less than twenty, you go left, discarding the entire right half of the tree. You then compare again and see that four is less than seventeen, so you go left again, discarding the entire right half of this subtree. Finally, you arrive at four without having to check every single other node in the tree. Binary search trees are extremely fast for insertion, deletion, and accessing any elements, even at large sizes. Another advantage is that binary search trees naturally stay sorted, making it easy to retrieve all their elements in sequence.
+
+So, how do we implement a binary search tree? Well, buckle up, because this is going to be a long code session. Seriously, pause the video and go get yourself a cookie or a cup of tea, because you deserve it!
+
+Before we jump into the code, I just want to preface this by saying that there are many ways to implement a BST, but I'm going to write something that I personally find easier to reason about. One tip I want to give is that when you're working with BSTs for the first time—or just in general, really—I find it super helpful to draw the BST so you can visualize the data you're working with. I also recommend using a lot of console logs and/or a debugger, because BSTs involve a lot of recursion, so it's really helpful to see what your code is processing at every step of the way.
+
+summary
+
+learned about trees, which are hierarchical, nonlinear data structures. Binary trees are a type of tree where each node has a maximum of two children. Binary search trees (BSTs) are a type of binary tree where each left child node is always less than its parent node, and each right child node is always greater than its parent node. Because of this structure, their data naturally stays sorted. BSTs are extremely beneficial when you need to access and process large amounts of ordered data very quickly, although this comes at the expense of some memory overhead.
+
+Finally, we learned how to implement BSTs and explored different methods of traversing them. There is the depth-first search, which is branch by branch and comes in three different forms: pre-order, in-order, and post-order. There is also the breadth-first search, which is level by level.
+
+This wraps up today's video on binary search trees and concludes this series on data structures in JavaScript. If you found this helpful, please leave a like and subscribe. Thank you for watching, and I'll see you next time!
