@@ -122,3 +122,114 @@ function findUniqueElements(a1,a2){
     console.log(removeAdjacentOdd([1, 3, 2, 5, 7, 8, 9]));  
     // Output: [1, 2, 5, 8, 9]
 //!-------------------------------------------------------------------------------------------------------------
+//The increment starts from 1 and increases by 1 at each step.
+// [
+//     1,  2,  4,  7, 11,
+//    16, 22, 29, 37, 46
+//  ]
+function generateNumber(n) {
+    let result = [1];  // Initialize the array with first element as 1
+    let increment = 1;  // Initialize the increment value
+    let curr = 1;       // Start from number 1
+
+    for (let i = 1; i < n; i++) { // Loop starts from 1 to n-1
+        curr += increment;  // Add the increment value to curr
+        result.push(curr);  // Store the updated value in the result array
+        increment++;        // Increase the increment value by 1
+    }
+    return result; // Return the generated pattern array
+}
+
+const n = 10;
+let patternArr = generateNumber(n);
+console.log(patternArr);
+
+//!!------------------------------------------------------------------------------------------------------------
+// You want to transform a nested list a into an array of objects where:
+
+// a contains odd numbers.
+// b contains even numbers.
+// eg:*a=[[51,3,52],[10,2,6,7],[511,24]]
+// output :
+// [{
+// a:[51,3],b:[52]
+// },
+// {
+// a:[7],b:[10,2,6]
+// },
+// {
+// a:[511],b:[24]
+// }
+// ]
+
+const a = [[51, 3, 52], [10, 2, 6, 7], [511, 24]];
+
+const output = a.map(subArray => {
+    return {
+        a: subArray.filter(num => num % 2 !== 0), // Odd numbers
+        b: subArray.filter(num => num % 2 === 0)  // Even numbers
+    };
+});
+
+console.log(output);
+
+//!!------------------------------------------------------------------------------------------------------------
+
+
+// ?
+// // input 
+
+// let arr=[5,4,3,2,1]
+
+// // output
+//   [
+//     [{ a: [1] }],
+//     [{ a: [1, 2] }],
+//     [{ a: [1, 2, 3] }],
+//     [{ a: [1, 2, 3, 4] }],
+//     [{ a: [1, 2, 3, 4, 5] }]
+//   ]
+
+// answer=>
+
+// let arr = [5, 4, 3, 2, 1];
+
+// function generatePattern(arr) {
+//     arr.sort((a, b) => a - b); // Sort in ascending order
+//     return arr.map((_, i) => [{ a: arr.slice(0, i + 1) }]);
+// }
+
+// console.log(generatePattern(arr));
+
+//!------------------------------------------------------------------------------------------------------------
+// ?.const ab = [
+//   { a: [-3, 34, 3, 0, 0], b: 98 },
+//   { a: [3, 0, 34, 3], b: 9 },
+//   { a: [3, 34, 33], b: -1 }
+// ];
+// Find no of zero +ve -ve numbers
+
+// answer=>
+
+    // const ab = [
+    //     { a: [-3, 34, 3, 0, 0], b: 98 },
+    //     { a: [3, 0, 34, 3], b: 9 },
+    //     { a: [3, 34, 33], b: -1 }
+    //   ];
+      
+    //   function countNumbers(data) {
+    //       let count = { zero: 0, positive: 0, negative: 0 };
+      
+    //       data.forEach(obj => {
+    //           obj.a.forEach(num => {
+    //               if (num === 0) count.zero++;
+    //               else if (num > 0) count.positive++;
+    //               else count.negative++;
+    //           });
+    //       });
+      
+    //       return count;
+    //   }
+      
+    //   console.log(countNumbers(ab));
+      

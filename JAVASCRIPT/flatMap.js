@@ -61,3 +61,34 @@ let count = words.reduce((acc, word) => {
 console.log(count);
 //{ apple: 3, banana: 2, orange: 1 }
 //!----------------------------------------------------------------------------------------------------------------//
+// ?.const ab = [
+//   { a: [-3, 34, 3, 0, 0], b: 98 },
+//   { a: [3, 0, 34, 3], b: 9 },
+//   { a: [3, 34, 33], b: -1 }
+// ];
+// Find no of zero +ve -ve numbers
+
+// answer=>
+
+    // const ab = [
+    //     { a: [-3, 34, 3, 0, 0], b: 98 },
+    //     { a: [3, 0, 34, 3], b: 9 },
+    //     { a: [3, 34, 33], b: -1 }
+    //   ];
+      
+    //   function countNumbers(data) {
+    //       let count = { zero: 0, positive: 0, negative: 0 };
+      
+    //       data.forEach(obj => {
+    //           obj.a.forEach(num => {
+    //               if (num === 0) count.zero++;
+    //               else if (num > 0) count.positive++;
+    //               else count.negative++;
+    //           });
+    //       });
+      
+    //       return count;
+    //   }
+      
+    //   console.log(countNumbers(ab));
+    //!----------------------------------------------------------------------------------------------------------------
