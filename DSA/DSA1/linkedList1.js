@@ -41,58 +41,32 @@ class demoList {
     }
     this.size++;
   }
-  removeFromIndex(index) {
-    if (index < 0 || index > this.size) {
-      return;
-    }
-    if (index === 0) {
-      this.head.next = this.head;
-      this.size--;
-    } else {
-      let curr = this.head;
-      for (let i = 0; i < index - 1; i++) {
-        curr = curr.next;
-      }
-      curr.next = curr.next.next;
-    }
-    this.size--;
+ //!Create two linked lists using objects, find the sum of last values of both linked lists using a function, reverse the resultant sum and find the sum of that elements in the result, convert the resultant into a linked list with each digit as a node in linkedlist
+
+
+ getLastValue() {
+  if (!this.head) return null;
+  let current = this.head;
+  while (current.next) {
+      current = current.next;
   }
-  removeByValue(val) {
-    if (!this.head) {
-      return;
-    }
-    if (this.head.val === val) {
-      this.head.next = this.head;
-      this.size--;
-    } else {
-      let prev = this.head;
-      while (prev.next && prev.next.val !== val) {
-        prev = prev.next;
-      }
-      if (prev.next) {
-        let removedNode = prev.next;
-        prev.next = removedNode.next;
-        this.size--;
-      }
-    }
-  }
-  removeMiddle() {
-    if (!this.head) {
-      return;
-    }
-    let slow = this.head;
-    let fast = this.head;
-    let prev = null;
-    while (fast !== null && fast.next !== null) {
-      prev = slow;
-      
-      slow = slow.next;
-      fast = fast.next.next;
-    }
-    if (prev !== null) {
-      prev.next = slow.next;
-    }
-  }
+  return current.value;
+}
+
+static reverseNumber(num) {
+  return parseInt(num.toString().split('').reverse().join(''), 10);
+}
+
+static sumDigits(num) {
+  return num.toString().split('').reduce((acc, digit) => acc + parseInt(digit), 0);
+}
+
+static createFromNumber(num) {
+  const list = new LinkedList();
+  num.toString().split('').forEach(digit => list.append(parseInt(digit)));
+  return list;
+}
+//!print
 
   print() {
     let curr = this.head;
