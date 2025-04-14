@@ -8,7 +8,7 @@ var person1={
 }
 getname.call(person1)
 
-
+//cfhcf
 
 function getname(a,b,c){
     console.log(a,b,c)

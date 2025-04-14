@@ -134,7 +134,30 @@ class doublyLinkedList {
     }
     return middle.val
   }
+  reverse() {
+    if (!this.head || !this.head.next) {
+      return; // No need to reverse if list is empty or has only one node
+    }
 
+    let current = this.head;
+    let prev = null;
+
+    while (current !== null) {
+      // Store the next node
+      let nextNode = current.next;
+
+      // Swap the prev and next pointers
+      current.next = prev;
+      current.prev = nextNode;
+
+      // Move prev and current one step forward
+      prev = current;
+      current = nextNode;
+    }
+
+    // Update the head to the last node (which is now the first)
+    this.head = prev;
+  }
 
   
 
