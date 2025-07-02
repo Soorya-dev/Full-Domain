@@ -49,14 +49,13 @@ const Child = ({ message }) => {
 }
 
 
-
 // //!Passing Props (  Child to Parent)
 
 
 // const Parent1 = () => {
 //     const [message, setMessage] = useState("")
 //     return (
-//         <>
+//         <> 
 //             <Child1 sendData={(data) => setMessage(data)} />
 //             <h1>{message}</h1>
 //         </>
@@ -287,4 +286,4 @@ const Child = ({ message }) => {
 //      FocusInput, ConditionalRender,CompareInputValues
 //     ,ChangeColor ,CheckLog}
 export {Parent,Child}
-// export default Counter1
+// export default Counter1b                      
