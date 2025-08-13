@@ -442,3 +442,20 @@ function insertEle(arr, val, ind){
 
 let a = [1,2,4,5]
 console.log(insertEle(a, 3, 2));
+
+function findOrInsert(arr,t){
+  let left=0
+  let right=arr.length-1
+  while(left<=right){
+      let mid=Math.floor((left+right)/2)
+       if(t==arr[mid]) return mid
+       if(t<arr[mid]){
+           right=mid-1
+       }else{
+           left=mid+1
+       }
+      
+  }
+  return left
+}
+console.log(findOrInsert([1,2,3,5,6,7],4))

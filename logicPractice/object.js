@@ -108,20 +108,6 @@ console.log(obj)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // JavaScript objects can inherit properties and methods from other objects through prototypes. Every object in JavaScript has a prototype, which is another object from which it inherits properties:
 
 // let animal = { species: "Animal" };
@@ -218,4 +204,21 @@ console.log(obj)
 // let parsedObject = JSON.parse(jsonString); // Convert JSON string
 
 
+function removeOddArrayKeys(obj) {
+  for (let key in obj) {
+    let isOdd = false;
 
+    for (let i = 0; i < obj[key].length; i++) {
+      if (obj[key][i] % 2 !== 0) {
+        isOdd = true;
+        break;
+      }
+    }
+
+    if (isOdd) {
+      delete obj[key];
+    }
+  }
+
+  return obj;
+}

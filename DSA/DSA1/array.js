@@ -34,7 +34,7 @@ console.log(uniqueElement(arr12, arr2));
 let arr5 = [23, 56, 42, 10, 16, 89, 50];
 
 function findMinimum(arr5) {
-  let min = arr5[0];
+  let min = arr5[0];w
   for (let i = 0; i < arr5.length; i++) {
     if (arr5[i] < min) {
       min = arr5[i];

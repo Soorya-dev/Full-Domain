@@ -23,14 +23,7 @@ console.log(c)
 
 
 //!-------------------------------------------------------------------------------------------------------------
-function sumGreaterThan(arr, threshold) {
-    return arr.reduce((sum, num) => num > threshold ? sum + num : sum, 0);
-}
 
-let arr = [10, 20, 30, 5, 15, 25, 35];
-let threshold = 15;
-console.log(sumGreaterThan(arr, threshold)); 
-// Output: 110 (20 + 30 + 25 + 35)
 //!-------------------------------------------------------------------------------------------------------------
 function removeAdjacentOdds(arr) {
     return arr.filter((num, index, array) => 

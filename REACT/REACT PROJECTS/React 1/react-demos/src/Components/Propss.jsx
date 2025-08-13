@@ -4,7 +4,7 @@
 //   return (
 //     <Child name="Sooryadev"/>
 //   )
-// }
+// } 
 // const Child=(props)=>{
 //     console.log(props)
 //     return (

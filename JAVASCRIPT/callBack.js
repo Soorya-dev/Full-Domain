@@ -2,17 +2,27 @@
 
 //* This is a key feature of callbacks: they allow to run code asynchronously, ensuring that certain actions only happen after others have finished.
 
-
-
-function greet(name,callback){
-    console.log("hello " + name);
-    callback()
+function greet(name) {
+  console.log(`Hello, ${name}`);
 }
-function sayBye() {
-    console.log("Goodbye!");
 
+function processUser(callback) {
+  let user = "Sooryadev";
+  callback(user); // calling the passed function
 }
-greet("soorya",sayBye)
+
+processUser(greet); // Output: Hello, Sooryadev
+
+
+// function greet(name,callback){
+//     console.log("hello " + name);
+//     callback()
+// }
+// function sayBye() {
+//     console.log("Goodbye!");
+
+// }
+// greet("soorya",sayBye)
 
 //! Asynchronous Callback
 //Callbacks are often used in asynchronous functions, such as when reading a file or making a network request.

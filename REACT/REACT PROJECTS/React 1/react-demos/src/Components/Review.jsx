@@ -2,7 +2,8 @@
 
 import { useState } from "react"
 
-// //counter app using useState
+//counter app using useState
+
 // const Counter1 = () => {
 //     const [count, setCount] = useState(0)
 //     function updateIncrement() {
