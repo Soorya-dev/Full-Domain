@@ -1,5 +1,5 @@
 let a=[7,4,7,9,3,6,8,6,2]
-let s=["hello",'myself','sooryadev']
+let s=["hello",'myself','sooryadev',"dsf"]
 let str='the world should be communist'
 let arr=[]
 
@@ -145,6 +145,99 @@ function removeDup(arr,idx=0,unique=[]){
     return removeDup(arr,idx+1,unique)
 }
 console.log(removeDup([1,2,3,2,1,4]));
+
+//!----------------------------------------------------------------------
+//?Reverse an array without sorting or built-in methods
+
+function reverseArray(arr){
+    let left=0
+    let right=arr.length-1
+    while(left<=right){
+        [arr[left],arr[right]]=[arr[right],arr[left]]
+        left++
+        right--
+    }
+return arr
+}
+console.log(reverseArray([3,2,1]))
+
+//!----------------------------------------------------------------------
+function removeMiddle(arr){
+    let mid=Math.floor(arr.length/2)
+     arr.splice(mid,1)
+     return arr
+}
+console.log(removeMiddle([1,2,3,4,5,6]));
+
+//!----------------------------------------------------------------------
+function removeMiddle2(arr){
+    let mid=Math.floor(arr.length/2)
+    for(let i=mid;i<arr.length-1;i++){
+        arr[i]=arr[i+1]
+    }
+    arr.length--
+    return arr
+}
+console.log(removeMiddle2([1,2,3,5,6,7]));
+//!----------------------------------------------------------------------
+//?Remove smallest string from array
+function removeShortestString(str){
+    let smallestIndex=0
+    for(let i=0;i<str.length;i++){
+        if(str[i].length<str[smallestIndex].length){
+            smallestIndex=i
+        }
+    }
+    for(let i=smallestIndex;i<str.length-1;i++){
+        str[i]=str[i+1]
+    }
+    str.length--
+   return str
+}
+console.log(s);
+
+console.log(removeShortestString(s));
+
+//!----------------------------------------------------------------------
+//?Flatten an array without flat()
+function flattenArray(arr){
+    let res=[]
+    for(let i=0;i<arr.length;i++){
+        if(Array.isArray(arr[i])){
+            res=res.concat(flattenArray(arr[i]))
+        }else{
+            res.push(arr[i])
+        }
+    }
+    return res
+}
+console.log(flattenArray([1, [2, 3,[2,3]], 4]));
+
+//!----------------------------------------------------------------------
+//!----------------------------------------------------------------------
+//!----------------------------------------------------------------------
+//!----------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -2,16 +2,14 @@
 
 //* This is a key feature of callbacks: they allow to run code asynchronously, ensuring that certain actions only happen after others have finished.
 
-function greet(name) {
-  console.log(`Hello, ${name}`);
+function greet(name,callback){
+    console.log("hello " + name)
+    callback()
 }
-
-function processUser(callback) {
-  let user = "Sooryadev";
-  callback(user); // calling the passed function
+function sayBye(){
+    console.log("good bye")
 }
-
-processUser(greet); // Output: Hello, Sooryadev
+greet("soorya",sayBye)
 
 
 // function greet(name,callback){

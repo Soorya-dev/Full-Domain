@@ -1,1 +1,10 @@
+write the query from finding the sudents mark of class 10 
+that should be in between 80 and 60 and in between 40 and 50
 
+db.class.find({
+    class:10,
+    $or:[
+        {marks:{$lte:80,$gte:60}},
+        {marks:{$lte:50,$gte:40}}
+    ]
+})

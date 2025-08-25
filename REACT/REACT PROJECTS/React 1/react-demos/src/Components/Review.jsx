@@ -1,6 +1,5 @@
-// import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef,lazy } from 'react'
 
-import { useState } from "react"
 
 //counter app using useState
 
@@ -27,26 +26,44 @@ import { useState } from "react"
 
 
 
+
 // //!Passing Props ( Parent to Child)
 
 
 
-const Parent = () => {
-    return (
-        <div>
-            <h1>Parent Component</h1>
-            <Child message="hello from parent" />
-        </div>
-    )
+// const Parent = () => {
+//     return (
+//         <div>
+//             <h1>Parent Component</h1>
+//             <Child message="hello from parent" />
+//         </div>
+//     )
+// }
+
+// const Child = ({ message }) => {
+//     return (
+//         <>
+//             <h2>{message}</h2>
+
+//         </>
+//     )
+// }
+
+
+export const Parent = () => {
+  return (
+    <div>
+        <h1>parent</h1>
+        <Child message="hello from Parent"></Child>
+    </div>
+  )
+
 }
 
-const Child = ({ message }) => {
-    return (
-        <>
-            <h2>{message}</h2>
-
-        </>
-    )
+export const Child = ({message}) => {
+  return (
+    <div>{message}</div>
+  )
 }
 
 
@@ -78,33 +95,33 @@ const Child = ({ message }) => {
 // //! input field set name
 
 
-// const Hello = () => {
-//     const [name, setName] = useState("guest")
-//     return (
-//         <>
-//             <div>hello {name}</div>
-//             <input type='text'
-//                 onChange={(e) => setName(e.target.value)}
-//                 placeholder='Enter name'></input>
+const Hello = () => {
+    const [name, setName] = useState("guest")
+    return (
+        <>
+            <div>hello {name}</div>
+            <input type='text'
+                onChange={(e) => setName(e.target.value)}
+                placeholder='Enter name'></input>
 
-//         </>
-//     )
-// }
+        </>
+    )
+}
 
 // //!sample useEffect title change
 
-// const ChangeTitle = () => {
-//     const [count, setCount] = useState(0)
-//     useEffect(() => {
-//         document.title = `clicked ${count} times`
-//     }, [count])
-//     return (
-//         <>
-//             <h1>count {count}</h1>
-//             <button onClick={() => setCount(count + 1)}> click me</button>
-//         </>
-//     )
-// }
+const ChangeTitle = () => {
+    const [count, setCount] = useState(0)
+    useEffect(() => {
+        document.title = `clicked ${count} times`
+    }, [count])
+    return (
+        <>
+            <h1>count {count}</h1>
+            <button onClick={() => setCount(count + 1)}> click me</button>
+        </>
+    )
+}
 
 
 // //!useRef
@@ -276,6 +293,19 @@ const Child = ({ message }) => {
 // }
 
 
+import React from 'react'
+
+React.lazy
+const Helloo=lazy((Lazyloading)=>{
+    
+})
+export const Lazyloading = () => {
+  return (
+    <div>
+        <h1>Helloo</h1>
+    </div>
+  )
+}
 
 
 
@@ -286,5 +316,5 @@ const Child = ({ message }) => {
 // export { Parent, Parent1, Hello, ChangeTitle,
 //      FocusInput, ConditionalRender,CompareInputValues
 //     ,ChangeColor ,CheckLog}
-export {Parent,Child}
+export {Hello,ChangeTitle}
 // export default Counter1b                      

@@ -226,3 +226,19 @@ console.log(output);
       
     //   console.log(countNumbers(ab));
       
+    //!digit sum
+//     var digitSum = function (digit) {
+//     let sum=0
+//   while(digit>0){
+//       let num=digit%10
+//       sum+=num
+//       digit=Math.floor(digit/10)
+//   } 
+//   return sum
+// };
+    //!digit sum with recursion
+// function digitSum(digit){
+//     if(digit==0) return digit
+//     return digit%10+digitSum(Math.floor(digit/10))
+// }
+// console.log(digitSum(424))

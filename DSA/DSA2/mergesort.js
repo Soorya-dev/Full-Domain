@@ -5,7 +5,7 @@
     //? At each level of recursion, the array is divided into two halves until we reach arrays of size 1.
     //? If the original array has n elements, the array will be divided log⁡ 𝑛 times (because each division reduces the size by half).
     //? Therefore, the depth of the recursion tree is logn.
-
+  
 //* 2. Merge Step:
     //? At each level of recursion (each level of the recursion tree), the merging process involves going through all 𝑛 elements to combine the sorted halves.
     //? Since there are logn levels and each level involves merging n elements, the total work done at each level is 𝑂(𝑛).
@@ -77,7 +77,7 @@ console.log(mergeSort(arr)); // Output: [12, 23, 34, 45, 78]
 // Right: [34, 78, 23]
 // Each half is recursively sorted, then merged back together.
 
-
+//s
 function split(arr){
     if(arr.length<2) return arr
     let mid=Math.floor(arr.length/2)
