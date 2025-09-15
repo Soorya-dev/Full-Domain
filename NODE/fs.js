@@ -15,3 +15,34 @@ fs.writeFile('output.txt',"HEllo woeld",(err)=>{
     //trial 1
 })
 
+//! check file exist or not 
+
+// const fs = require('fs');
+// const path = require('path');
+
+// const filePath = path.join(__dirname, 'example.txt');
+
+// if (fs.existsSync(filePath)) {
+//     console.log('File exists!');
+// } else {
+//     console.log('File does not exist!');
+// }
+
+
+
+//!Write Current Time into a File
+
+// const time = new Date().toLocaleString(); // e.g., "15/09/2025, 20:05:30"
+// fs.writeFile('time.txt', time, (err) => {
+//     if (err) console.error('Error writing file:', err);
+//     else console.log('Time written successfully!');
+// });
+
+
+//! or
+
+// const time = new Date().toLocaleString() + '\n';
+// fs.appendFile('time.txt', time, (err) => {
+//     if (err) console.error('Error appending file:', err);
+//     else console.log('Time appended successfully!');
+// });
