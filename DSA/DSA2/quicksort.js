@@ -1,24 +1,24 @@
 // let arr = [5,6,3,4,1,9,26,74,56,20]
 
-// function quicksort(arr){
-//     if(arr.length <=1){
-//         return arr
-//     }
-//     let pivot = arr[0]
-//     let left = []
-//     let right = []
-//     for(let i=1; i<arr.length; i++){
-//         if(arr[i] > pivot){
-//             right.push(arr[i])
-//         }else {
-//             left.push(arr[i])
-//         }
-//     }
-//     return [...quicksort(right), pivot, ...quicksort(left)]
+function quicksort(arr){
+    if(arr.length <=1){
+        return arr
+    }
+    let pivot = arr[0]
+    let left = []
+    let right = []
+    for(let i=1; i<arr.length; i++){
+        if(arr[i] > pivot){
+            right.push(arr[i])
+        }else {
+            left.push(arr[i])
+        }
+    }
+    return [...quicksort(right), pivot, ...quicksort(left)]
     
-// }
+}
 
-// console.log(quicksort(arr));
+console.log(quicksort(arr));
 
 //! Time complexity
 
@@ -35,79 +35,7 @@ function quicksort(array){
     if(array.length<=0) return array
     let piviot=array[0]
     let left=[]
-    let right=[]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+    let right=[]    
     for(let i=1;i<array.length;i++){
         if(array[i]>piviot){
             right.push(array[i])

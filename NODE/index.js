@@ -1,14 +1,14 @@
-const express=require('express')
-const app=express()
-const port=4000;
-app.get('/',(req,res)=>{
-    const num=req.query.num
-    console.log(num)
-    res.send("hello")
-})
-app.listen(port,()=>{
-    console.log("gfhfgfdgfctdy"+port);
-})
+// const express=require('express')
+// const app=express()
+// const port=4000;
+// app.get('/',(req,res)=>{
+//     const num=req.query.num
+//     console.log(num)
+//     res.send("hello")
+// })
+// app.listen(port,()=>{
+//     console.log("gfhfgfdgfctdy"+port);
+// })
 
 
 
@@ -226,7 +226,23 @@ app.listen(port,()=>{
 
 
 //!-------------------------------------------------------------------------------------------
+//  const express=require('express');
+//  const port=3000
+// const app=express()
+// function validateNumber(req,res,next){
+//     if(typeof(Number(req.query.num))==Number){
+//         return "this is a number"
+//     }
+//         next()
+// }
 
+// app.get('/',validateNumber,(req,res)=>{
+//     let num=(req.query.num)
+//     console.log(num);
+    
+//     res.send(num)
+// })
+// app.listen(3000)
 
 
 

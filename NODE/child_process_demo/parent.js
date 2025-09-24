@@ -1,40 +1,72 @@
-const { fork, spawn } = require('child_process'); // Import fork & spawn from child_process module
-const path = require('path'); // For creating file paths
+const { fork } = require("child_process");
 
-// ----------------- FORK EXAMPLE -----------------
-const childPath = path.join(__dirname, 'child.js'); // Absolute path to child.js
-const child = fork(childPath); // Start child.js in a separate Node process
+// Fork (create) a child process running worker.js
+const child = fork("child.js");
 
-// Send a message to the forked child
-child.send('Hello from parent!');
+// Send a message to the child
+child.send("Hello from parent!");
 
-// Listen for message from child
-child.on('message', (msg) => {
-    console.log('Parent received:', msg);
+// Listen for messages from the child
+child.on("message", (msg) => {
+  console.log("Message from child:", msg);
 });
 
-// ----------------- SPAWN EXAMPLE -----------------
-console.log('Running spawn example:');
 
-// Spawn a child process to run a system command (list files)
-// 'ls' on Linux/Mac, 'dir' on Windows
-const command = process.platform === 'win32' ? 'dir' : 'ls';
-const spawned = spawn(command, [], { shell: true });
 
-// Listen for output from spawned process
-spawned.stdout.on('data', (data) => {
-    console.log(`Spawn output:\n${data}`);
-});
 
-// Listen for errors
-spawned.stderr.on('data', (data) => {
-    console.error(`Spawn error:\n${data}`);
-});
 
-// Detect when the spawned process exits
-spawned.on('close', (code) => {
-    console.log(`Spawned process exited with code ${code}`);
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const { fork, spawn } = require('child_process'); // Import fork & spawn from child_process module
+// const path = require('path'); // For creating file paths
+
+// // ----------------- FORK EXAMPLE -----------------
+// const childPath = path.join(__dirname, 'child.js'); // Absolute path to child.js
+// const child = fork(childPath); // Start child.js in a separate Node process
+
+// // Send a message to the forked child
+// child.send('Hello from parent!');
+
+// // Listen for message from child
+// child.on('message', (msg) => {
+//     console.log('Parent received:', msg);
+// });
+
+// // ----------------- SPAWN EXAMPLE -----------------
+// console.log('Running spawn example:');
+
+// // Spawn a child process to run a system command (list files)
+// // 'ls' on Linux/Mac, 'dir' on Windows
+// const command = process.platform === 'win32' ? 'dir' : 'ls';
+// const spawned = spawn(command, [], { shell: true });
+
+// // Listen for output from spawned process
+// spawned.stdout.on('data', (data) => {
+//     console.log(`Spawn output:\n${data}`);
+// });
+
+// // Listen for errors
+// spawned.stderr.on('data', (data) => {
+//     console.error(`Spawn error:\n${data}`);
+// });
+
+// // Detect when the spawned process exits
+// spawned.on('close', (code) => {
+//     console.log(`Spawned process exited with code ${code}`);
+// });
 
 
 

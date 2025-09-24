@@ -41,3 +41,13 @@ console.log(fibonacci(6))
 
 
 //!paliandrome-------------------------------------------
+function isPalindrome(str, start = 0, end = str.length - 1) {
+  // Base case: crossed indices or single character
+  if (start >= end) return true;
+
+  // If first and last characters don't match
+  if (str[start] !== str[end]) return false;
+
+  // Recur for the inner substring
+  return isPalindrome(str, start + 1, end - 1);
+}

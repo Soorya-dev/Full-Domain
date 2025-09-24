@@ -31,23 +31,6 @@ import React, { useState, useEffect, useRef,lazy } from 'react'
 
 
 
-// const Parent = () => {
-//     return (
-//         <div>
-//             <h1>Parent Component</h1>
-//             <Child message="hello from parent" />
-//         </div>
-//     )
-// }
-
-// const Child = ({ message }) => {
-//     return (
-//         <>
-//             <h2>{message}</h2>
-
-//         </>
-//     )
-// }
 
 
 export const Parent = () => {
@@ -70,26 +53,26 @@ export const Child = ({message}) => {
 // //!Passing Props (  Child to Parent)
 
 
-// const Parent1 = () => {
-//     const [message, setMessage] = useState("")
-//     return (
-//         <> 
-//             <Child1 sendData={(data) => setMessage(data)} />
-//             <h1>{message}</h1>
-//         </>
-//     )
-// }
+const Parent1 = () => {
+    const [message, setMessage] = useState("")
+    return (
+        <> 
+            <Child1 sendData={(data) => setMessage(data)} />
+            <h1>{message}</h1>
+        </>
+    )
+}
 
 
-// const Child1 = ({ sendData }) => {
-//     return (
-//         <div>
-//             <button onClick={() => sendData("hello from child")}>
-//                 Send Data
-//             </button>
-//         </div>
-//     )
-// }
+const Child1 = ({ sendData }) => {
+    return (
+        <div>
+            <button onClick={() => sendData("hello from child")}>
+                Send Data
+            </button>
+        </div>
+    )
+}
 
 
 // //! input field set name

@@ -1,16 +1,15 @@
 // child.js
 //! fork
 
-// Listen for messages from parent
-process.on('message', (msg) => {
-    console.log('Child received:', msg);
+// Listen for message from parent
+process.on("message", (msg) => {
+  console.log("Message from parent:", msg);
 
-    // Send a reply back to parent
-    process.send('Hello from child!');
+  // Reply back
+  process.send("Hello back from child!");
 });
 
-// Optional: some console output
-console.log('Child process started');
+
 
 
 

@@ -28,3 +28,4 @@ const counterReducer = (state, action) => {
   }
 
 export default UseReducer;
+

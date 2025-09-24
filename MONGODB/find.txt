@@ -1,3 +1,6 @@
+
+
+
 write the query from finding the sudents mark of class 10 
 that should be in between 80 and 60 and in between 40 and 50
 

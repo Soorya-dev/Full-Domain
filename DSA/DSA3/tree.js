@@ -152,7 +152,50 @@ class BST {
     }
     return result;
   }
+   printLeafNodes() {
+    const leaves = [];
+    const traverse = (node) => {
+      if (!node) return;
+      if (!node.left && !node.right) leaves.push(node.val); // leaf node
+      traverse(node.left);
+      traverse(node.right);
+    };
+    traverse(this.root);
+    return leaves;
+  }
+
+  // -------------------------
+  // 2️⃣ Delete a node
+  delete(val) {
+    const deleteNode = (node, val) => {
+      if (!node) return null;
+
+      if (val < node.val) node.left = deleteNode(node.left, val);
+      else if (val > node.val) node.right = deleteNode(node.right, val);
+      else {
+        // Node found
+        this.count--;
+
+        // Case 1: No child
+        if (!node.left && !node.right) return null;
+
+        // Case 2: One child
+        if (!node.left) return node.right;
+        if (!node.right) return node.left;
+
+        // Case 3: Two children
+        let temp = node.right;
+        while (temp.left) temp = temp.left; // find min in right subtree
+        node.val = temp.val; // replace value
+        node.right = deleteNode(node.right, temp.val); // delete successor
+      }
+      return node;
+    };
+
+    this.root = deleteNode(this.root, val);
+  }
 }
+
 
 const bst = new BST(15);
 
